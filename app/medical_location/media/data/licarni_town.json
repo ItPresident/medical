@@ -1,0 +1,77 @@
+{
+  "Киев": {
+    "link": "https://likarni.com/clinics/kyev"
+  },
+  "Харьков": {
+    "link": "https://likarni.com/clinics/kharkiv"
+  },
+  "Львов": {
+    "link": "https://likarni.com/clinics/lviv"
+  },
+  "Днепр": {
+    "link": "https://likarni.com/clinics/dnepropetrovsk"
+  },
+  "Одесса": {
+    "link": "https://likarni.com/clinics/odessa"
+  },
+  "Бровары": {
+    "link": "https://likarni.com/clinics/brovary"
+  },
+  "Винница": {
+    "link": "https://likarni.com/clinics/vinnica"
+  },
+  "Житомир": {
+    "link": "https://likarni.com/clinics/zhitomir"
+  },
+  "Запорожье": {
+    "link": "https://likarni.com/clinics/zaporozhyje"
+  },
+  "Ивано-Франковск": {
+    "link": "https://likarni.com/clinics/ivano-frankivsk"
+  },
+  "Кременчуг": {
+    "link": "https://likarni.com/clinics/kremenchug"
+  },
+  "Кривой Рог": {
+    "link": "https://likarni.com/clinics/krivoj-rog"
+  },
+  "Кропивницкий": {
+    "link": "https://likarni.com/clinics/kirovograd"
+  },
+  "Луцк": {
+    "link": "https://likarni.com/clinics/luck"
+  },
+  "Николаев": {
+    "link": "https://likarni.com/clinics/nikolajev"
+  },
+  "Полтава": {
+    "link": "https://likarni.com/clinics/poltava"
+  },
+  "Ровно": {
+    "link": "https://likarni.com/clinics/rovno"
+  },
+  "Сумы": {
+    "link": "https://likarni.com/clinics/sumy"
+  },
+  "Тернополь": {
+    "link": "https://likarni.com/clinics/ternopoly"
+  },
+  "Ужгород": {
+    "link": "https://likarni.com/clinics/uzhgorod"
+  },
+  "Херсон": {
+    "link": "https://likarni.com/clinics/kherson"
+  },
+  "Хмельницкий": {
+    "link": "https://likarni.com/clinics/hmelynickiy"
+  },
+  "Черкассы": {
+    "link": "https://likarni.com/clinics/cherkassy"
+  },
+  "Чернигов": {
+    "link": "https://likarni.com/clinics/chernigov"
+  },
+  "Черновцы": {
+    "link": "https://likarni.com/clinics/chernovcy"
+  }
+}

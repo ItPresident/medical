@@ -1,0 +1,84 @@
+{% load static %}
+{% block mycss %}
+<link href="{% static 'css/base/header.css' %}" rel="stylesheet"> {% endblock mycss %}
+
+
+<nav class="fixed-top  navbar-expand-lg ">
+    <div class="container-fluid container nav-box">
+        <div class="nav-right">
+            <a href="{% url 'index' %}"><img class="main_logo" src="../../../static/img/index/logo/cardiogram.png" alt="logo"></a>
+
+              {% if request.resolver_match.view_name == "index" %}
+            <div class="selector">
+                <div id="selectField">
+                    <p id="selectText">{{ citys.0.name }}</p>
+
+                    <img src="../../static/img/index/header/arrow.png" id="arrowIcon" alt="">
+                </div>
+                <ul id="list" class="hide">
+                    {% for city in citys %}
+                    <li class="options">
+                        <p>{{ city.name }}</p>
+                    </li>
+                       {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if request.resolver_match.view_name == "doctor_detil" %}
+            <div class="selector">
+                <div id="selectField">
+                    <p id="selectText">Select</p>
+                    <img src="../../static/img/index/header/arrow.png" id="arrowIcon" alt="">
+                </div>
+                <ul id="list" class="hide">
+
+                    <li class="options">
+                        <p>Рубрика</p>
+                    </li>
+
+                </ul>
+            </div>
+            {% endif %}
+
+        </div>
+
+
+        <div class="nav-center">
+            <form>
+                <input type="text" placeholder="Поиск лекарств и медуслуг">
+            </form>
+        </div>
+        <div class="nav-left">
+            <a href="">
+                <img src="../../static/img/index/header/favorites.png" alt="">
+                <span>Избранное</span>
+            </a>
+            <a href="">
+                <img src="../../static/img/index/header/loginIcon.png" alt="">
+                <span>Войти</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script type="text/javascript">
+    var selectField = document.getElementById("selectField");
+    var selectText = document.getElementById("selectText");
+    var list = document.getElementById("list");
+    var arrowIcon = document.getElementById("arrowIcon");
+    var options = document.getElementsByClassName("options");
+
+    selectField.onclick = function(){
+        list.classList.toggle("hide");
+        arrowIcon.classList.toggle("rotate");
+    }
+
+    for(option of options){
+        option.onclick = function(){
+            selectText.innerHTML = this.textContent;
+            list.classList.toggle("hide");
+            arrowIcon.classList.toggle("rotate");
+        }
+    }
+</script>

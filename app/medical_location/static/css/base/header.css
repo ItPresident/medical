@@ -1,0 +1,137 @@
+nav {
+    background-color: #46cdd6;
+    max-height: 50px;
+}
+
+.nav-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+.nav-center {
+    width: 60%;
+}
+
+.nav-center form {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-center form input {
+    width: 70%;
+    border-radius: 20px;
+    border: none;
+    padding: 0 10px 0 10px;
+    height: 30px;
+    text-align: center;
+}
+.nav-center form input:focus-visible {
+    border: none;
+}
+
+.nav-left {
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.nav-left a {
+    color: #fff;
+    text-decoration: none;
+    border-left: solid 0.5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.nav-left a img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main_logo {
+        width: 40px;
+}
+
+
+.selector {
+    width: 180px;
+    height: 44px;
+    padding-top: 9px;
+    padding-right: 15px;
+    align-items: center;
+    margin-left: 10px;
+    border-right: solid 1px;
+    border-left: solid 1px;
+    border-color: #fff;
+}
+
+#selectField {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#selectField p {
+    margin: 0 auto;
+    margin: 0 auto;
+    color: #fff;
+}
+
+#selectField img {
+    width: 12px;
+    transition: transform .5s;
+}
+
+#list {
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    max-height: 300px;
+    min-width: auto;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.options {
+    width: 100%;
+    height: 30px;
+    list-style: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom: solid 1px #00000017;
+    color: #0000008a;
+}
+
+.options  p {
+        margin: 0;
+    padding-top: 3px;
+}
+
+.options:hover {
+    background: #46cdd6;
+    color: #fff;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

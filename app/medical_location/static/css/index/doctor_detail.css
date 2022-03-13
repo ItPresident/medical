@@ -1,0 +1,156 @@
+body {
+
+}
+
+.main {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+
+.main_left {
+    max-width: 54%;
+}
+
+.singel_doctor_header {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+    margin-bottom: 20px;
+}
+
+.singel_doctor_content {
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+
+.singel_doctor_photo img {
+    border-radius: 88px;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.singel_doctor_title {
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 0 8px;
+}
+.singel_doctor_content_info {
+        max-width: 71%;
+}
+
+.singel_doctor_content_meta {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.singel_doctor_meta {
+    padding-right: 15px;
+    color: rgba(0,0,0,.64);
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.singel_doctor_header_info {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.singel_doctor_header_info ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.singel_doctor_header_info_name {
+    margin: 20px 0;
+}
+
+.singel_doctor_header_info_text {
+    padding: 0 0 0 20px;
+    font-size: 14px;
+    position: relative;
+}
+.singel_doctor_header_info_text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    background: #ff1446;
+}
+
+.main_right {
+    max-width: 40%;
+    min-width: 40%;
+}
+
+.singel_doctor_recording_title {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.singel_doctor_recording_title h2 {
+    font-size: 25px;
+}
+
+.w_place_item {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.w_place_item_right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.w_place_title {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    z-index: 2;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    max-height: 40px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+}
+
+.w_pace_time {
+    margin-left: 23px;
+}
+
+.w_pace_time::before {
+    content: "*";
+    color: green;
+}
+
+.singel_doctor_recording_box {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
+    margin-bottom: 20px;
+}

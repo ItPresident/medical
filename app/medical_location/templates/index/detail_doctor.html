@@ -1,0 +1,74 @@
+{% extends 'bace/bace.html'%}
+{% load static %}
+
+{% block mycss %}
+<link href="{% static 'css/index/doctor_detail.css' %}" rel="stylesheet"> {% endblock mycss %}
+<!--<link href="" rel="stylesheet" >-->
+{% block title %}
+
+{{ singel_doctor.name }}
+
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="main container">
+    <div class="main_left">
+    <div class="singel_doctor_header">
+        <div class="ContentBox">
+            <div class="singel_doctor_content">
+                <div class="singel_doctor_photo "><img
+                        src="../../{{ singel_doctor.photo|cut:'/home/president/Desktop/medical_location/app/medical_location/' }}"
+                        class="StaffPage__logoImage" alt="{{ singel_doctor.name }}" itemprop="image"></div>
+                <div class="singel_doctor_content_info"><h1 class="singel_doctor_title" itemprop="name">{{ singel_doctor.name }}</h1>
+                    <div class="singel_doctor_content_meta">
+                    {% for item in singel_doctor.info.items %}
+                        {% if forloop.counter|divisibleby:2 and item.1 != "startyear" and item.1 != "title_categoree" and item.1 !=  "title_degree"%}
+                    <div class="singel_doctor_meta">{{ item.1 }} |</div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="singel_doctor_header_info">
+        <h5>Инфо</h5>
+        {% for item in singel_doctor.more_info.items %}
+                 <p class="singel_doctor_header_info_name"><b>{{ item.0 }}:</b></p>
+        <ul>
+            {% for i in item.1.items %}
+            <li class="singel_doctor_header_info_text">{{ i.1 }}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+        </div>
+    <div class="main_right">
+        <div class="singel_doctor_recording_box">
+            <div class="singel_doctor_recording_title">
+                <h2>Запись</h2>
+            </div>
+            {% for w_place in singel_doctor.worck_place.all %}
+            <div class="w_place_item">
+                <div class="w_place_item_right">
+                    <a class="w_place_title">{{ w_place.name }}</a>
+
+                    {% if w_place.town is not None %}
+                        <p>{{ w_place.town }}</p>
+                            {% endif %}
+                    <p>{{ w_place.street }}</p>
+                    {% for time in w_place.worck_time.items %}
+                    <p class="w_pace_time">{{ time.1 }}</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

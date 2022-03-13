@@ -1,0 +1,333 @@
+{
+  "categories_name": "Запись к врачу",
+  "Аллерголог": {
+    "name": "Аллерголог",
+    "link": "/doctors/kyev/allergologija",
+    "mini_price_lable": "Консультация аллерголога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Андролог": {
+    "name": "Андролог",
+    "link": "/doctors/kyev/andrologija",
+    "mini_price_lable": "Консультация андролога",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Анестезиолог": {
+    "name": "Анестезиолог",
+    "link": "/doctors/kyev/anesteziologija",
+    "mini_price_lable": "Консультация анестезиолога",
+    "mini_price_cost": "от 175 грн."
+  },
+  "Венеролог": {
+    "name": "Венеролог",
+    "link": "/doctors/kyev/venerologija",
+    "mini_price_lable": "Консультация венеролога",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Вертебролог": {
+    "name": "Вертебролог",
+    "link": "/doctors/kyev/vertebrologija",
+    "mini_price_lable": "Консультация вертебролога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Гастроэнтеролог": {
+    "name": "Гастроэнтеролог",
+    "link": "/doctors/kyev/gastroenterologija",
+    "mini_price_lable": "Консультация гастроэнтеролога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Гематолог": {
+    "name": "Гематолог",
+    "link": "/doctors/kyev/gematologija",
+    "mini_price_lable": "Консультация гематолога",
+    "mini_price_cost": "от 280 грн."
+  },
+  "Генетик": {
+    "name": "Генетик",
+    "link": "/doctors/kyev/genetika",
+    "mini_price_lable": "Консультация генетика",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Гепатолог": {
+    "name": "Гепатолог",
+    "link": "/doctors/kyev/gepatologija",
+    "mini_price_lable": "Консультация гепатолога",
+    "mini_price_cost": "от 250 грн."
+  },
+  "Гинеколог": {
+    "name": "Гинеколог",
+    "link": "/doctors/kyev/ginekologija",
+    "mini_price_lable": "Консультация гинеколога",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Гомеопат": {
+    "name": "Гомеопат",
+    "link": "/doctors/kyev/gomeopatija",
+    "mini_price_lable": "Консультация гомеопата",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Дерматолог": {
+    "name": "Дерматолог",
+    "link": "/doctors/kyev/dermatologija",
+    "mini_price_lable": "Консультация дерматолога",
+    "mini_price_cost": "от 100 грн."
+  },
+  "Диетолог": {
+    "name": "Диетолог",
+    "link": "/doctors/kyev/dijetologija",
+    "mini_price_lable": "Консультация диетолога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Иммунолог": {
+    "name": "Иммунолог",
+    "link": "/doctors/kyev/immunologija",
+    "mini_price_lable": "Консультация иммунолога",
+    "mini_price_cost": "от 300 грн."
+  },
+  "Инфекционист": {
+    "name": "Инфекционист",
+    "link": "/doctors/kyev/infekcionnyje-bolezni",
+    "mini_price_lable": "Консультация инфекциониста",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Кардиолог": {
+    "name": "Кардиолог",
+    "link": "/doctors/kyev/kardiologija",
+    "mini_price_lable": "Консультация кардиолога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Кинезитерапевт": {
+    "name": "Кинезитерапевт",
+    "link": "/doctors/kyev/kineziotejpirovanije",
+    "mini_price_lable": "Консультация кинезитерапевта",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Косметолог": {
+    "name": "Косметолог",
+    "link": "/doctors/kyev/cosmetology",
+    "mini_price_lable": "Консультация косметолога",
+    "mini_price_cost": "от 75 грн."
+  },
+  "Логопед": {
+    "name": "Логопед",
+    "link": "/doctors/kyev/logopedija",
+    "mini_price_lable": "Консультация логопеда",
+    "mini_price_cost": "от 210 грн."
+  },
+  "Маммолог": {
+    "name": "Маммолог",
+    "link": "/doctors/kyev/mammologija",
+    "mini_price_lable": "Консультация маммолога",
+    "mini_price_cost": "от 220 грн."
+  },
+  "Массажист": {
+    "name": "Массажист",
+    "link": "/doctors/kyev/massazh",
+    "mini_price_lable": "Консультация массажиста",
+    "mini_price_cost": "от 60 грн."
+  },
+  "Нарколог": {
+    "name": "Нарколог",
+    "link": "/doctors/kyev/narkologija",
+    "mini_price_lable": "Консультация нарколога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Невролог": {
+    "name": "Невролог",
+    "link": "/doctors/kyev/nevrologija",
+    "mini_price_lable": "Консультация невролога",
+    "mini_price_cost": "от 100 грн."
+  },
+  "Нефролог": {
+    "name": "Нефролог",
+    "link": "/doctors/kyev/nefrologija",
+    "mini_price_lable": "Консультация нефролога",
+    "mini_price_cost": "от 250 грн."
+  },
+  "Озонотерапевт": {
+    "name": "Озонотерапевт",
+    "link": "/doctors/kyev/ozonoterapija",
+    "mini_price_lable": "Консультация озонотерапевта",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Онколог": {
+    "name": "Онколог",
+    "link": "/doctors/kyev/onkologija",
+    "mini_price_lable": "Консультация онколога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Ортопед": {
+    "name": "Ортопед",
+    "link": "/doctors/kyev/ortopedija",
+    "mini_price_lable": "Консультация ортопеда",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Остеопат": {
+    "name": "Остеопат",
+    "link": "/doctors/kyev/osteopatija",
+    "mini_price_lable": "Консультация остеопата",
+    "mini_price_cost": "от 250 грн."
+  },
+  "Отоларинголог": {
+    "name": "Отоларинголог",
+    "link": "/doctors/kyev/otolaringologija",
+    "mini_price_lable": "Консультация отоларинголога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Офтальмолог": {
+    "name": "Офтальмолог",
+    "link": "/doctors/kyev/oftalymologija",
+    "mini_price_lable": "Консультация офтальмолога",
+    "mini_price_cost": "от 100 грн."
+  },
+  "Педиатр": {
+    "name": "Педиатр",
+    "link": "/doctors/kyev/pediatrija",
+    "mini_price_lable": "Консультация педиатра",
+    "mini_price_cost": "от 150 грн."
+  },
+  "Пластический хирург": {
+    "name": "Пластический хирург",
+    "link": "/doctors/kyev/plasticheskaja-khirurgija",
+    "mini_price_lable": "Консультация пластического хирурга",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Подолог": {
+    "name": "Подолог",
+    "link": "/doctors/kyev/podolog",
+    "mini_price_lable": "Консультация подолога",
+    "mini_price_cost": "от 350 грн."
+  },
+  "Проктолог": {
+    "name": "Проктолог",
+    "link": "/doctors/kyev/proktologija",
+    "mini_price_lable": "Консультация проктолога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Психиатр": {
+    "name": "Психиатр",
+    "link": "/doctors/kyev/psihiatrija",
+    "mini_price_lable": "Консультация психиатра",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Психолог": {
+    "name": "Психолог",
+    "link": "/doctors/kyev/psihologija",
+    "mini_price_lable": "Консультация психолога",
+    "mini_price_cost": "от 250 грн."
+  },
+  "Психотерапевт": {
+    "name": "Психотерапевт",
+    "link": "/doctors/kyev/psihoterapevtija",
+    "mini_price_lable": "Консультация психотерапевта",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Пульмонолог": {
+    "name": "Пульмонолог",
+    "link": "/doctors/kyev/pulymonologija",
+    "mini_price_lable": "Консультация пульманолога",
+    "mini_price_cost": "от 300 грн."
+  },
+  "Реабилитолог": {
+    "name": "Реабилитолог",
+    "link": "/doctors/kyev/reabilitologija",
+    "mini_price_lable": "Консультация реабилитолога",
+    "mini_price_cost": "от 60 грн."
+  },
+  "Реаниматолог": {
+    "name": "Реаниматолог",
+    "link": "/doctors/kyev/reanimatologija",
+    "mini_price_lable": "Консультация реаниматолога",
+    "mini_price_cost": "от 175 грн."
+  },
+  "Ревматолог": {
+    "name": "Ревматолог",
+    "link": "/doctors/kyev/revmatologija",
+    "mini_price_lable": "Консультация ревматолога",
+    "mini_price_cost": "от 250 грн."
+  },
+  "Репродуктолог": {
+    "name": "Репродуктолог",
+    "link": "/doctors/kyev/reproduktologija",
+    "mini_price_lable": "Консультация репродуктолога",
+    "mini_price_cost": "от 390 грн."
+  },
+  "Рефлексотерапевт": {
+    "name": "Рефлексотерапевт",
+    "link": "/doctors/kyev/refleksoterapija",
+    "mini_price_lable": "Консультация рефлексотерапевта",
+    "mini_price_cost": "от 120 грн."
+  },
+  "Сексолог": {
+    "name": "Сексолог",
+    "link": "/doctors/kyev/seksologija",
+    "mini_price_lable": "Консультация сексолога",
+    "mini_price_cost": "от 220 грн."
+  },
+  "Семейный врач": {
+    "name": "Семейный врач",
+    "link": "/doctors/kyev/semejnyj-vrach",
+    "mini_price_lable": "",
+    "mini_price_cost": "от 100 грн."
+  },
+  "Стоматолог": {
+    "name": "Стоматолог",
+    "link": "/doctors/kyev/stomatology",
+    "mini_price_lable": "Консультация стоматолога",
+    "mini_price_cost": "от 50 грн."
+  },
+  "Терапевт": {
+    "name": "Терапевт",
+    "link": "/doctors/kyev/terapevtija",
+    "mini_price_lable": "Консультация терапевта",
+    "mini_price_cost": "от 100 грн."
+  },
+  "Травматолог": {
+    "name": "Травматолог",
+    "link": "/doctors/kyev/travmatologija",
+    "mini_price_lable": "Консультация травматолога",
+    "mini_price_cost": "от 200 грн."
+  },
+  "Трихолог": {
+    "name": "Трихолог",
+    "link": "/doctors/kyev/trihologija",
+    "mini_price_lable": "Консультация трихолога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Уролог": {
+    "name": "Уролог",
+    "link": "/doctors/kyev/urologija",
+    "mini_price_lable": "Консультация уролога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Физиотерапевт": {
+    "name": "Физиотерапевт",
+    "link": "/doctors/kyev/fizioterapija",
+    "mini_price_lable": "Консультация физеотерапевта",
+    "mini_price_cost": "от 120 грн."
+  },
+  "Флеболог": {
+    "name": "Флеболог",
+    "link": "/doctors/kyev/flebologija",
+    "mini_price_lable": "Консультация флеболога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Хирург": {
+    "name": "Хирург",
+    "link": "/doctors/kyev/hirurgija",
+    "mini_price_lable": "Консультация хирурга",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Эндокринолог": {
+    "name": "Эндокринолог",
+    "link": "/doctors/kyev/endokrinologija",
+    "mini_price_lable": "Консультация эндокринолога",
+    "mini_price_cost": "от 195 грн."
+  },
+  "Эндоскопист": {
+    "name": "Эндоскопист",
+    "link": "/doctors/kyev/konsulytacija-endoskopista",
+    "mini_price_lable": "Консультация врача эндоскописта",
+    "mini_price_cost": "от 295 грн."
+  }
+}

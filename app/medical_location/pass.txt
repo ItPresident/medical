@@ -1,0 +1,15 @@
+^#WtUlUgQ2nV - d admin
+0Xo%dwR9Y*QR - postgres
+
+all_price = card.find_elements(By.CLASS_NAME, "Button--big") # нахоже все кнопки в карточке
+        for price in all_price:
+            if price.text == "Все цены":
+                try:
+                    url = price.get_attribute("href")
+                    browser.get(url=url)
+                    time.sleep(5)
+                    b_title = browser.find_element(By.CLASS_NAME, "PersonalTitle__link").text
+                    print(b_title)
+                except Exception as ex:
+                    print(ex)
+            elif price.text != "Все цены":
