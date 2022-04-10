@@ -1,0 +1,47 @@
+{% extends 'bace/bace.html'%}
+{% load static %}
+
+{% block mycss %} <link href="{% static 'css/index/wplace-style.css' %}" rel="stylesheet" > {% endblock mycss %}
+<!--<link href="" rel="stylesheet" >-->
+{% block title %}
+
+doctor list
+
+{% endblock %}
+
+{% block content %}
+<div class="container main">
+    <h1>Search results</h1>
+    <form action="{% url 'search' %}">
+        <label for="For_child">For_child</label>
+        <input type="checkbox" name="checkbox" value="1" id="For_child">
+        <label for="docktor">docktor</label>
+        <input type="checkbox" name="docktor" value="1" id="docktor">
+         <label for="medical_center">medical center</label>
+        <input type="checkbox" name="medical_center" value="1" id="medical_center">
+        <select id="cars" name="select">
+            {% for town_item in towns %}
+          <option value="{{ town_item.name }}">{{ town_item.name }}</option>
+            {% endfor %}
+        </select>
+        <button> Submit </button>
+    </form>
+    <br>
+    <p>For_child: {{ checkbox }}</p>
+    <p>select: {{ select }}</p>
+    <br>
+    <h2>Doctor</h2>
+    <br>
+    {% for doctors_item in doctors %}
+        <h2>{{ doctors_item.name }}</h2>
+    <p>{{ doctors_item.description|truncatechars:200 }}</p>
+    {% endfor %}
+    <br>
+    <h2>W place</h2>
+    <br>
+    {% for w_place_item in w_place %}
+        <h2>{{ w_place_item.name }}</h2>
+    <p>{{ w_place_item.description|truncatechars:200 }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

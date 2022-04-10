@@ -1,0 +1,26 @@
+{% extends 'bace/bace.html'%}
+{% load static %}
+
+{% block mycss %} <link href="{% static 'css/index/wplace-style.css' %}" rel="stylesheet" > {% endblock mycss %}
+<!--<link href="" rel="stylesheet" >-->
+{% block title %}
+
+doctor list
+
+{% endblock %}
+
+{% block content %}
+<div class="main container">
+    {% for wplace_item in Wplace %}
+    <div class="wplace_result_item">
+        <h4 class="wplace_title">{{ wplace_item.name }}</h4>
+        <p>  {{ wplace_item.street }}<span>{% if wplace_item.worck_time != None %}{{ wplace_item.worck_time }} {% endif %}</span></p>
+        <p>{% if wplace_item.description != None %}
+            {{wplace_item.description}}
+
+            {% endif %}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

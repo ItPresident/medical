@@ -1,110 +1,34 @@
 {% extends 'bace/bace.html'%}
 {% load static %}
 
-{% block mycss %} <link href="{% static 'css/index/style.css' %}" rel="stylesheet" > {% endblock mycss %}
+{% block mycss %} <link href="{% static 'css/index/index-style.css' %}" rel="stylesheet" > {% endblock mycss %}
 <!--<link href="" rel="stylesheet" >-->
 {% block title %}
 
-doctor list
+Index page
 
 {% endblock %}
 
 {% block content %}
 <div class="main container">
-    {% for doctor_item in Doctor %}
-    <div class="result_list_item">
-        <div class="doctor_info vcard">
-            <div class="item">
-
-                <div class="doctor_logo">
-                    <a href="/doctor/bartenyjev-sergej-grigoryjevich">
-                        <img class="lazy-loaded"
-                                                              l_doctor = Doctor.objects.get(id=id)             src="../{{ doctor_item.photo|cut:'/home/president/Desktop/medical_location/app/medical_location/' }}"
-                                                                           alt="{{doctor_item.name }}"
-                                                                           height="217" width="150">
-                        <noscript><img src="/files/doctor/logo/bartenyjev-sergej-grigoryjevich.jpg" class="photo logo"
-                                       alt="{{doctor_item.name }}" height="217" width="150"></noscript>
-                    </a>
-                </div>
-                <div class="doctor_about">
-                    <div class="name"><a class="title_doc fn" href="{% url 'doctor_detil' id=doctor_item.pk %}">{{ doctor_item.name }}</a></div>
-                    <div class="undernameBlock">
-                        {% for item in doctor_item.info.items %}
-                        {% if forloop.counter|divisibleby:2 and item.1 != "startyear" and item.1 != "title_categoree" and item.1 !=  "title_degree"%}
-                        <div> {{ item.1 }} |</div>
-                        {% endif %}
-                        {% endfor %}
-                    </div>
-                    <p class="pricerange hidden"> Консультация {{ doctor_item.price }} грн</p>
-                    <div class="benefits">
-                        {% if doctor_item.For_child == True %}
-                        <div class="on_child"><span><img  src="../../static/img/index/doctor_item/children.png" alt=""></span><span><p>Детский врач</p></span></div>
-                        {% endif %}
-                    </div>
-                    <div class="description">
-                        {{ doctor_item.description|truncatechars:200 }}
-                    </div>
-                    <a href="{% url 'doctor_detil' id=doctor_item.pk %}" class="doctor-enroll">Записаться</a>
-<!--                    <div data-clinic="2755" data-doctor="11063"-->
-<!--                         class="make_question_doctor make_question_doctor_i orange_btn"-->
-<!--                         data-open="question_popup_group">-->
-<!--                        <span>Записаться на прием</span></div>-->
-                </div>
-            </div>
+    <div class="docktor_speciality_list">
+        <h1 class="title">Врачи</h1>
+        <div class="speciality">
+            {% for speciality_item in speciality %}
+            <a href="{% url 'speciality_list' id=speciality_item.pk %}" target="_blank" class="speciality_title">{{ speciality_item.name }}</a>
+        {% endfor %}
         </div>
-        <div class="doctor_clinic">
-            <div class="clinic-item">
-                <h5>Врач работает в клиниках:</h5>
-                {% for w_place in doctor_item.worck_place.all %}
-                    <div class="w_place_box">
 
-                        <h5>{{ w_place.name }}</h5>
-                        <div class="w_place_adres">
-                            {% if w_place.town is not None %}
-                        <p>{{ w_place.town }}</p>
-                            {% endif %}
-                        <p class="w_place_street">{{ w_place.street }}</p>
-                            </div>
-                    </div>
-
-                {% endfor %}
-            </div>
-        </div>
     </div>
+        <div class="medical_category_list">
+            <h1 class="title">Мед центры</h1>
+            <div class="category">
+            {% for category_item in category %}
+            <a href="{% url 'category_list' id=category_item.pk %}" target="_blank" class="category_title">{{ category_item.name }} <span>: {{ service_count.forloop.counter0 }}</span></a>
+            {% endfor %}
+                </div>
+        </div>
 
-
-    {% endfor %}
-<div class="paginate">
-    {% if Doctor.has_previous %}
-  <a href="?page={{ Doctor.previous_page_number }}">« </a>
-
-  {% if Doctor.number > 3 %}
-    <a href="?page=1">1</a>
-    {% if Doctor.number > 4 %}
-      <span>...</span>
-    {% endif %}
-  {% endif %}
-{% endif %}
-
-{% for num in Doctor.paginator.page_range %}
-  {% if Doctor.number == num %}
-    <a class="activate" href="?page={{ num }}">{{ num }}</a>
-  {% elif num > Doctor.number|add:'-3' and num < Doctor.number|add:'3' %}
-    <a href="?page={{ num }}">{{ num }}</a>
-  {% endif %}
-{% endfor %}
-
-{% if Doctor.has_next %}
-  {% if Doctor.number < Doctor.paginator.num_pages|add:'-3' %}
-    <a><span>...</span></a>
-    <a href="?page={{ Doctor.paginator.num_pages }}">{{ Doctor.paginator.num_pages }}</a>
-  {% elif Doctor.number < Doctor.paginator.num_pages|add:'-2' %}
-    <a href="?page={{ Doctor.paginator.num_pages }}">{{ Doctor.paginator.num_pages }}</a>
-  {% endif %}
-
-  <a href="?page={{ Doctor.next_page_number }}"> »</a>
-{% endif %}
 </div>
-</div>
+
 {% endblock %}
-

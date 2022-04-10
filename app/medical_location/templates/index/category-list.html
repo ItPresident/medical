@@ -1,0 +1,20 @@
+{% extends 'bace/bace.html'%}
+{% load static %}
+
+{% block mycss %} <link href="{% static 'css/index/category-list.css' %}" rel="stylesheet" > {% endblock mycss %}
+<!--<link href="" rel="stylesheet" >-->
+{% block title %}
+
+Index page
+
+{% endblock %}
+
+{% block content %}
+<div class="main container">
+    <div class="services_box">
+    {% for service_item in service_list %}
+        <a href="#" class="service_title">{{ service_item.name }}</a>
+    {% endfor %}
+        </div>
+</div>
+{% endblock %}

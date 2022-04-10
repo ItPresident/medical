@@ -2,7 +2,12 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path("", views.index, name="index"),
+    path("speciality/<int:id>", views.speciality_list, name="speciality_list"),
+    path("category/<int:id>", views.category_list, name="category_list"),
+    path('docktor-list', views.docktorList, name='docktor_list'),
+    path('wplace-list', views.wplaceList, name='wplace_list'),
+    path('search', views.search, name='search'),
     # path('get_town', views.gte_Town, name='get_town'),
     path('save-category', views.save_category, name='save_category'),
     path('save-service', views.save_service, name='save_service'),

@@ -1,0 +1,19 @@
+.main {
+    padding-bottom: 60px;
+        padding-top: 60px;
+}
+
+.services_box {
+        display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.service_title {
+    width: 33%;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+

@@ -45,8 +45,8 @@
 
 
         <div class="nav-center">
-            <form>
-                <input type="text" placeholder="Поиск лекарств и медуслуг">
+            <form action="{% url 'search' %}">
+                <input type="text" placeholder="Поиск лекарств и медуслуг" name="search">
             </form>
         </div>
         <div class="nav-left">

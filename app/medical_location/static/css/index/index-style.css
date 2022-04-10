@@ -1,0 +1,35 @@
+.main {
+    padding-top: 60px;
+}
+
+.speciality, .category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.speciality_title, .category_title{
+        width: 33%;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.category_title span {
+    color: #0000008c;
+
+}
+
+.speciality_title:hover, .category_title:hover {
+    color: #0a58ca;
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 import time
 
 from django.shortcuts import render
+from django.db.models import Q
 from geopy.geocoders import Nominatim
 from .models import Town, Speciality, WorckPlace, Doctor, Category, Service, ImageWorckPlace
 from django.db.models import Count
@@ -24,8 +25,75 @@ loc = [["Title 1", 36.85763435526387, 30.787827068383148],
 
 # Create your views here.
 
-
 def index(request):
+    speciality_list = Speciality.objects.all()
+    category_list = Category.objects.all()
+    service_count_list = []
+    for category_item in category_list:
+        service_count = Service.objects.filter(category=category_item).count()
+        service_count_list.append(service_count)
+    context = {
+        "category": category_list,
+        "speciality": speciality_list,
+        "service_count": service_count_list,
+    }
+    return render(request, 'index/index.html', context=context)
+
+
+def search(request):
+    search = request.GET.get('search')
+    checkbox = request.GET.get('checkbox')
+    search_doctor = request.GET.get('docktor')
+    search_medical = request.GET.get('medical_center')
+    select = request.GET.get('select')
+    all_town = Town.objects.all()
+    # if select:
+    #     get_town = Town.objects.get(name=select)
+    if search:
+
+        doctors = Doctor.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
+        w_place = WorckPlace.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
+    elif select:
+        get_town = Town.objects.get(name=select)
+        doctors = Doctor.objects.filter(Q(town=get_town))
+        w_place = WorckPlace.objects.filter(Q(town=get_town))
+    else:
+        doctors = None
+        w_place = None
+    context = {
+        "Serch_enter": search,
+        'doctors': doctors,
+        'w_place': w_place,
+        'checkbox': checkbox,
+        'towns': all_town,
+        'select': select,
+    }
+    return render(request, "index/search.html", context=context)
+
+
+def category_list(request, id):
+    get_category = Category.objects.get(pk=id)
+    get_service_list = Service.objects.filter(category=get_category)
+    context = {
+        'id': id,
+        'service_list': get_service_list,
+    }
+    return render(request, 'index/category-list.html', context=context)
+
+
+# pass
+
+def speciality_list(request, id):
+    get_speciality = Speciality.objects.get(pk=id)
+    get_doctor_list = Doctor.objects.filter(speciality=get_speciality)
+    context = {
+        'id': id,
+        'doctor_list': get_doctor_list,
+    }
+    return render(request, 'index/speciality-list.html', context=context)
+
+
+def docktorList(request):
     city_list = Town.objects.all()
     contant_list = Doctor.objects.all()
     paginator = Paginator(contant_list, 20)
@@ -38,7 +106,22 @@ def index(request):
         "paging": paginator,
         "citys": city_list,
     }
-    return render(request, 'index/index.html', context=context)
+    return render(request, 'index/DocktorList.html', context=context)
+
+
+def wplaceList(request):
+    wplace_list = WorckPlace.objects.all()
+    paginator = Paginator(wplace_list, 20)
+
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    context = {
+        "name": "Worck places list",
+        "wplace_list": wplace_list,
+        "Wplace": page_obj,
+        "paging": paginator,
+    }
+    return render(request, "index/worckPlaces-list.html", context=context)
 
 
 def doctor_detail(request, id):
@@ -280,7 +363,6 @@ def save_img(request):
 
         except Exception:
             continue
-
 
     end_time = datetime.now()
     context = {

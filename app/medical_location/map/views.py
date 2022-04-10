@@ -18,7 +18,7 @@ loc = [["Title 1", 36.85763435526387, 30.787827068383148],
 # Create your views here.
 def index(request):
     i = map()
-    return render(request, "map/index.html")
+    return render(request, "map/DocktorList.html")
 
 
 def map():
@@ -45,4 +45,4 @@ def map():
                       popup=folium.Popup("<h2>" + i[0] + "</h2>"),
                       ).add_to(mapObj)
         numb += 1
-    mapObj.save('templates/map/index.html')
+    mapObj.save('templates/map/DocktorList.html')
