@@ -1,3 +1,3 @@
-#!/home/president/Desktop/medical_location/env/bin/python3
+#!/home/max/medicallocateon/env/bin/python3
 from numba.pycc import main
 main()

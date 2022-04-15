@@ -14,7 +14,7 @@ doctor list
     <h1>Search results</h1>
     <form action="{% url 'search' %}">
         <label for="For_child">For_child</label>
-        <input type="checkbox" name="checkbox" value="1" id="For_child">
+        <input type="checkbox" name="for_child" value="1" id="For_child">
         <label for="docktor">docktor</label>
         <input type="checkbox" name="docktor" value="1" id="docktor">
          <label for="medical_center">medical center</label>
@@ -35,6 +35,7 @@ doctor list
     {% for doctors_item in doctors %}
         <h2>{{ doctors_item.name }}</h2>
     <p>{{ doctors_item.description|truncatechars:200 }}</p>
+    <p>{{ doctors_item.For_child }}</p>
     {% endfor %}
     <br>
     <h2>W place</h2>

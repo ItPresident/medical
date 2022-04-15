@@ -42,33 +42,53 @@ def index(request):
 
 def search(request):
     search = request.GET.get('search')
-    checkbox = request.GET.get('checkbox')
     search_doctor = request.GET.get('docktor')
     search_medical = request.GET.get('medical_center')
     select = request.GET.get('select')
+    for_child = request.GET.get('for_child')
     all_town = Town.objects.all()
     # if select:
     #     get_town = Town.objects.get(name=select)
+
+    serch_list = []
+
+
     if search:
 
         doctors = Doctor.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
         w_place = WorckPlace.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
     elif select:
         get_town = Town.objects.get(name=select)
-        doctors = Doctor.objects.filter(Q(town=get_town))
+        doctors = Doctor.objects.filter(Q(town=get_town)).filter(Q(For_child=for_child))
         w_place = WorckPlace.objects.filter(Q(town=get_town))
     else:
         doctors = None
         w_place = None
+
+    # if search_doctor:
+    #     if select:
+    #         get_town = Town.objects.get(name=select)
+    #         serch_town = Q(town=get_town)
+    #         serch_list.append(serch_town)
+    #     if for_child:
+    #         serch_for_child = Q(For_child=for_child)
+    #         serch_list.append(serch_for_child)
+    #     doctors = Doctor.objects.filter(serch_list)
+
+    if search_medical:
+        pass
+   #if for_child:
+    #   get_for_child =
+
     context = {
         "Serch_enter": search,
         'doctors': doctors,
         'w_place': w_place,
-        'checkbox': checkbox,
+        'checkbox': for_child,
         'towns': all_town,
         'select': select,
     }
-    return render(request, "index/search.html", context=context)
+    return render(request, "bace/search.html", context=context)
 
 
 def category_list(request, id):
