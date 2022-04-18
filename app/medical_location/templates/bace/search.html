@@ -1,7 +1,10 @@
 {% extends 'bace/bace.html'%}
 {% load static %}
 
-{% block mycss %} <link href="{% static 'css/index/wplace-style.css' %}" rel="stylesheet" > {% endblock mycss %}
+{% block mycss %}
+<link href="{% static 'css/base/search.css' %}" rel="stylesheet" >
+<link href="{% static 'css/index/doxtor-card-style.css' %}" rel="stylesheet" >
+{% endblock mycss %}
 <!--<link href="" rel="stylesheet" >-->
 {% block title %}
 
@@ -11,38 +14,112 @@ doctor list
 
 {% block content %}
 <div class="container main">
-    <h1>Search results</h1>
-    <form action="{% url 'search' %}">
-        <label for="For_child">For_child</label>
+    <br>
+    <form action="{% url 'search' %}" class="search-form">
+        <div class="search-left">
+        <div class="search-check-box">
         <input type="checkbox" name="for_child" value="1" id="For_child">
+        <label for="For_child">For_child</label>
+            </div>
+        <div class="search-check-box">
+        <input type="checkbox" name="docktor" value="1" id="docktor" checked="true">
         <label for="docktor">docktor</label>
-        <input type="checkbox" name="docktor" value="1" id="docktor">
-         <label for="medical_center">medical center</label>
+            </div>
+        <div class="search-check-box"   >
         <input type="checkbox" name="medical_center" value="1" id="medical_center">
+        <label for="medical_center">medical center</label>
+            </div>
         <select id="cars" name="select">
             {% for town_item in towns %}
           <option value="{{ town_item.name }}">{{ town_item.name }}</option>
             {% endfor %}
         </select>
-        <button> Submit </button>
+            </div>
+        <div class="search-right">
+        <input class="search-field" type="text" placeholder="Поиск лекарств и медуслуг" name="search">
+        <button> Поиск </button>
+            </div>
     </form>
     <br>
-    <p>For_child: {{ checkbox }}</p>
-    <p>select: {{ select }}</p>
     <br>
-    <h2>Doctor</h2>
+    {% if search_doctor %}
+    <h2  class="search-block-title">Найденые врачи</h2>
     <br>
-    {% for doctors_item in doctors %}
-        <h2>{{ doctors_item.name }}</h2>
-    <p>{{ doctors_item.description|truncatechars:200 }}</p>
-    <p>{{ doctors_item.For_child }}</p>
+    <div class="search-result-container">
+     {% for doctor_item in Doctor %}
+    <div class="result_list_item">
+        <div class="doctor_info vcard">
+            <div class="item">
+
+                <div class="doctor_logo">
+                    <a href="/doctor/bartenyjev-sergej-grigoryjevich">
+                        <img class="lazy-loaded"
+                                                              l_doctor = Doctor.objects.get(id=id)             src="../{{ doctor_item.photo|cut:'/home/president/Desktop/medical_location/app/medical_location/' }}"
+                                                                           alt="{{doctor_item.name }}"
+                                                                           height="217" width="150">
+                        <noscript><img src="/files/doctor/logo/bartenyjev-sergej-grigoryjevich.jpg" class="photo logo"
+                                       alt="{{doctor_item.name }}" height="217" width="150"></noscript>
+                    </a>
+                </div>
+                <div class="doctor_about">
+                    <div class="name"><a class="title_doc fn" href="{% url 'doctor_detil' id=doctor_item.pk %}">{{ doctor_item.name }}</a></div>
+                    <div class="undernameBlock">
+                        {% for item in doctor_item.info.items %}
+                        {% if forloop.counter|divisibleby:2 and item.1 != "startyear" and item.1 != "title_categoree" and item.1 !=  "title_degree"%}
+                        <div> {{ item.1 }} |</div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="pricerange hidden"> Консультация {{ doctor_item.price }} грн</p>
+                    <div class="benefits">
+                        {% if doctor_item.For_child == True %}
+                        <div class="on_child"><span><img  src="../../static/img/index/doctor_item/children.png" alt=""></span><span><p>Детский врач</p></span></div>
+                        {% endif %}
+                    </div>
+                    <div class="description">
+                        {{ doctor_item.description|truncatechars:200 }}
+                    </div>
+                    <a href="{% url 'doctor_detil' id=doctor_item.pk %}" class="doctor-enroll">Записаться</a>
+<!--                    <div data-clinic="2755" data-doctor="11063"-->
+<!--                         class="make_question_doctor make_question_doctor_i orange_btn"-->
+<!--                         data-open="question_popup_group">-->
+<!--                        <span>Записаться на прием</span></div>-->
+                </div>
+            </div>
+        </div>
+        <div class="doctor_clinic">
+            <div class="clinic-item">
+                <h5>Врач работает в клиниках:</h5>
+                {% for w_place in doctor_item.worck_place.all %}
+                    <div class="w_place_box">
+
+                        <h5>{{ w_place.name }}</h5>
+                        <div class="w_place_adres">
+                            {% if w_place.town is not None %}
+                        <p>{{ w_place.town }}</p>
+                            {% endif %}
+                        <p class="w_place_street">{{ w_place.street }}</p>
+                            </div>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     {% endfor %}
+         <div class="searc
+    {% endif %}
     <br>
-    <h2>W place</h2>
+    {% if search_medical %}
+    <h2  class="search-block-title">Найденые медужереждения</h2>
     <br>
+        <div class="search-result-container">
     {% for w_place_item in w_place %}
         <h2>{{ w_place_item.name }}</h2>
     <p>{{ w_place_item.description|truncatechars:200 }}</p>
     {% endfor %}
+            <div>
+    {% endif %}
 </div>
 {% endblock %}

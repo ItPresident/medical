@@ -52,11 +52,9 @@ def search(request):
 
     serch_list = []
 
-
     if search:
-
-        doctors = Doctor.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
-        w_place = WorckPlace.objects.filter(Q(name__icontains=search) | Q(description__icontains=search) )
+        doctors = Doctor.objects.filter(Q(name__icontains=search) | Q(description__icontains=search))
+        w_place = WorckPlace.objects.filter(Q(name__icontains=search) | Q(description__icontains=search))
     elif select:
         get_town = Town.objects.get(name=select)
         doctors = Doctor.objects.filter(Q(town=get_town)).filter(Q(For_child=for_child))
@@ -77,16 +75,18 @@ def search(request):
 
     if search_medical:
         pass
-   #if for_child:
+    # if for_child:
     #   get_for_child =
 
     context = {
         "Serch_enter": search,
-        'doctors': doctors,
+        'Doctor': doctors,
         'w_place': w_place,
         'checkbox': for_child,
         'towns': all_town,
         'select': select,
+        'search_doctor': search_doctor,
+        'search_medical': search_medical,
     }
     return render(request, "bace/search.html", context=context)
 
