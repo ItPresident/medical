@@ -1,9 +1,10 @@
 {% extends 'bace/bace.html'%}
 {% load static %}
-
+{% load filter_tags %}
 {% block mycss %}
 <link href="{% static 'css/base/search.css' %}" rel="stylesheet" >
 <link href="{% static 'css/index/doxtor-card-style.css' %}" rel="stylesheet" >
+<link href="{% static 'css/index/medical-car-style.css' %}" rel="stylesheet" >
 {% endblock mycss %}
 <!--<link href="" rel="stylesheet" >-->
 {% block title %}
@@ -43,9 +44,10 @@ doctor list
     <br>
     <br>
     {% if search_doctor %}
-    <h2  class="search-block-title">Найденые врачи</h2>
+
     <br>
     <div class="search-result-container">
+        <h2  class="search-block-title">Найденые врачи</h2>
      {% for doctor_item in Doctor %}
     <div class="result_list_item">
         <div class="doctor_info vcard">
@@ -53,8 +55,7 @@ doctor list
 
                 <div class="doctor_logo">
                     <a href="/doctor/bartenyjev-sergej-grigoryjevich">
-                        <img class="lazy-loaded"
-                                                              l_doctor = Doctor.objects.get(id=id)             src="../{{ doctor_item.photo|cut:'/home/president/Desktop/medical_location/app/medical_location/' }}"
+                        <img class="lazy-loaded"    src="./../{{ doctor_item.photo|cut:'/home/president/Desktop/medical_location/app/medical_location/' }}"
                                                                            alt="{{doctor_item.name }}"
                                                                            height="217" width="150">
                         <noscript><img src="/files/doctor/logo/bartenyjev-sergej-grigoryjevich.jpg" class="photo logo"
@@ -108,18 +109,34 @@ doctor list
     </div>
 
     {% endfor %}
-         <div class="searc
+
     {% endif %}
     <br>
     {% if search_medical %}
-    <h2  class="search-block-title">Найденые медужереждения</h2>
+<h2  class="search-block-title">Найденые медужереждения</h2>
     <br>
-        <div class="search-result-container">
     {% for w_place_item in w_place %}
-        <h2>{{ w_place_item.name }}</h2>
-    <p>{{ w_place_item.description|truncatechars:200 }}</p>
+            <div class="medical-cad-result_list_item">
+
+                 <h2 class="medical-title">{{ w_place_item.name }}</h2>
+                <p> <span class="medical-location"> <span class="medical-town">{{ w_place_item.town }}</span>, <span class="medical-street"> {{ w_place_item.street }}</span></span>
+                    <span class="dot"></span>
+                    {% for key, value in  w_place_item.worck_time.items %}
+                    <span class="{{ key }} worck-time">  {{ value }}</span></p>
+                {% endfor %}
+                <div class="medical-card-slider">
+                    {% for photo in w_place_item.photo.all %}
+                    <img src=" ./../{{ photo.image.url|split:'/' }}" alt="{{ photo.name }}">
+                    {% endfor %}
+
+                </div>
+                 <p>{{ w_place_item.description|truncatechars:200 }}</p>
+            </div>
+
+
     {% endfor %}
             <div>
     {% endif %}
 </div>
+
 {% endblock %}
